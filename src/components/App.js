@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import update from 'immutability-helper';
 import Button from './button';
+import ButtonsArray from './ButtonsArray';
 import Show from './show';
 
 class App extends Component {
@@ -30,23 +31,8 @@ class App extends Component {
         return(
         <div className="container">
         <Show style={styles.show} data={this.state.result}/>
-        <div style={styles.box} className="box text-center">
-          <Button style={styles.button} onClick={this.handleChange} value="1" text="1"/>
-          <Button style={styles.button} onClick={this.handleChange} value="2" text="2"/>
-          <Button style={styles.button} onClick={this.handleChange} value="3" text="3"/>
-          <Button style={styles.button} onClick={this.handleChange} className="add" value="+" text="+"/>
-          <Button style={styles.button} onClick={this.handleChange} value="4" text="4"/>
-          <Button style={styles.button} onClick={this.handleChange} value="5" text="5"/>
-          <Button style={styles.button} onClick={this.handleChange} value="6" text="6"/>
-          <Button style={styles.button} onClick={this.handleChange} className="substitute" value="-" text="-"/>
-          <Button style={styles.button} onClick={this.handleChange} value="7" text="7"/>
-          <Button style={styles.button} onClick={this.handleChange} value="8" text="8"/>
-          <Button style={styles.button} onClick={this.handleChange} value="9" text="9"/>
-          <Button style={styles.button} onClick={this.handleChange} className="dividor" value="/" text="/"/>
-          <Button style={styles.button} onClick={this.handleChange} value="0" text="0"/>
-          <Button style={styles.result } onClick={this.handleChange} className="result" value="=" text="="/>
-          <Button style={styles.button} onClick={this.handleChange} className="multiply" value="*" text="*"/>
-        </div>
+        <ButtonsArray buttonStyle={styles.button} handleChange={this.handleChange}
+                               boxStyle={styles.box} resultSyle={styles.result}/>
        </div>
         )
     }
